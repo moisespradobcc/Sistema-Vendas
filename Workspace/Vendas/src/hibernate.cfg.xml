@@ -17,7 +17,7 @@
 		<property name="connection.pool_size">1</property>
 
 		<!-- SQL dialect -->
-		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
 		<!-- Gerenciamento da sessão Mysql -->
 		<property name="current_session_context_class">thread</property>
@@ -30,6 +30,12 @@
 
 		<!-- Criação das tabelas -->
 		<property name="hbm2ddl.auto">update</property>
+
+		<mapping class="br.com.vendas.domain.Fornecedor" />
+		<mapping class="br.com.vendas.domain.Funcionario" />
+		<mapping class="br.com.vendas.domain.Produto" />
+		<mapping class="br.com.vendas.domain.Vendas" />
+		<mapping class="br.com.vendas.domain.Item" />
 
 	</session-factory>
 
