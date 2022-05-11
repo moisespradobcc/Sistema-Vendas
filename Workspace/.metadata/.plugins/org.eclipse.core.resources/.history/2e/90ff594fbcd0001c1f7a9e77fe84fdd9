@@ -1,0 +1,16 @@
+package br.com.vendas.DAO;
+
+import org.hibernate.Session;
+
+import br.com.vendas.domain.Fornecedor;
+import br.com.vendas.util.HibernateUtil;
+
+public class FornecedoresDAO {
+	public void salvar(Fornecedor fornecedor) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		sessao.save(fornecedor);
+		sessao.close();
+	}
+
+}
