@@ -1,0 +1,116 @@
+package br.com.vendas.DAO;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import br.com.vendas.domain.Funcionario;
+import br.com.vendas.domain.Produto;
+import br.com.vendas.util.HibernateUtil;
+
+public class ProdutosDAO {
+	public void salvar(Produto produto) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction(); // Abre uma transação
+			sessao.save(produto);
+			transacao.commit();// Confirmando a transação
+
+		} catch (RuntimeException e) {
+			if (transacao != null) {
+				transacao.rollback();// Desfaz a transação reverte as alterações
+			}
+
+		} finally {
+			sessao.close();
+		}
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Produto> listar() {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		List<Produto> produtos = null;
+
+		try {
+
+			Query consulta = sessao.getNamedQuery("Produto.listar");
+			produtos = consulta.list();
+
+		} catch (RuntimeException e) {
+			throw e;
+
+		} finally {
+			sessao.close();
+		}
+		return produtos;
+	}
+
+	public Produto buscarPorCodigo(Long codigo) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		Produto produto = null;
+
+		try {
+
+			Query consulta = sessao.getNamedQuery("Produto.buscarPorCodigo");
+			consulta.setLong("codigo", codigo);
+			produto = (Produto) consulta.uniqueResult();
+
+		} catch (RuntimeException e) {
+			throw e;
+
+		} finally {
+			sessao.close();
+		}
+		return produto;
+	}
+
+	public void excluir(Produto produto) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction(); // Abre uma transação
+			sessao.delete(produto);
+			transacao.commit();// Confirmando a transação
+
+		} catch (RuntimeException e) {
+			if (transacao != null) {
+				transacao.rollback();// Desfaz a transação reverte as alterações
+			}
+
+		} finally {
+			sessao.close();
+		}
+
+	}
+
+	public void editar(Funcionario funcionario) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction(); // Abre uma transação
+			sessao.update(funcionario);
+			transacao.commit();// Confirmando a transação
+
+		} catch (RuntimeException e) {
+			if (transacao != null) {
+				transacao.rollback();// Desfaz a transação reverte as alterações
+			}
+
+		} finally {
+			sessao.close();
+		}
+
+	}
+}

@@ -1,10 +1,11 @@
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.mylyn.java.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javax.imageio.spi.ServiceRegistry"><rhs name\="javax.imageio.spi.ServiceRegistry"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/><rhs name\="javax.persistence.FetchType"/><rhs name\="javax.persistence.TemporalType"/></lhs><lhs name\="br.com.vendas.domain.Fornecedor"><rhs name\="br.com.vendas.domain.Fornecedor"/></lhs><lhs name\="br.com.vendas.DAO.FornecedoresDAO"><rhs name\="br.com.vendas.DAO.FornecedoresDAO"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javax.imageio.spi.ServiceRegistry"><rhs name\="javax.imageio.spi.ServiceRegistry"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/><rhs name\="javax.persistence.FetchType"/><rhs name\="javax.persistence.TemporalType"/></lhs><lhs name\="br.com.vendas.domain.Fornecedor"><rhs name\="br.com.vendas.domain.Fornecedor"/></lhs><lhs name\="br.com.vendas.DAO.FornecedoresDAO"><rhs name\="br.com.vendas.DAO.FornecedoresDAO"/></lhs><lhs name\="java.lang.Number"><rhs name\="java.math.BigDecimal"/></lhs><lhs name\="java.math.BigDecimal"><rhs name\="java.math.BigDecimal"/></lhs><lhs name\="br.com.vendas.domain.Produto"><rhs name\="br.com.vendas.domain.Produto"/></lhs><lhs name\="br.com.vendas.domain.Vendas"><rhs name\="br.com.vendas.domain.Vendas"/></lhs><lhs name\="br.com.vendas.DAO.VendasDAO"><rhs name\="br.com.vendas.DAO.VendasDAO"/></lhs><lhs name\="br.com.vendas.domain.Item"><rhs name\="br.com.vendas.domain.Item"/></lhs><lhs name\="br.com.vendas.DAO.ItemDAO"><rhs name\="br.com.vendas.DAO.ItemDAO"/></lhs></history>
 content_assist_number_of_computers=24
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
 fontPropagated=true
+markOccurrences=false
 org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.ui.editor.tab.width=
 org.eclipse.jdt.ui.formatterprofiles.version=12

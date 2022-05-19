@@ -1,0 +1,81 @@
+package br.com.vendas.test;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+import br.com.vendas.DAO.FornecedoresDAO;
+import br.com.vendas.DAO.FuncionariosDAO;
+import br.com.vendas.DAO.ProdutosDAO;
+import br.com.vendas.DAO.VendasDAO;
+import br.com.vendas.domain.Fornecedor;
+import br.com.vendas.domain.Funcionario;
+import br.com.vendas.domain.Produto;
+import br.com.vendas.domain.Vendas;
+
+public class VendasDAOTest {
+	@Test
+	@Ignore
+	public void salvar() {
+		FuncionariosDAO fundao = new FuncionariosDAO();
+		Funcionario f1 = fundao.buscarPorCodigo(1L);
+
+		Vendas venda = new Vendas();
+		venda.setFuncionario(f1);
+		venda.setHorario(new Date());
+		venda.setValor_total(new BigDecimal(350.00D));
+
+		VendasDAO vendadao = new VendasDAO();
+		vendadao.salvar(venda);
+
+	}
+
+	@Test
+	
+	public void listar() {
+		VendasDAO vdao = new VendasDAO();
+		List<Vendas> vendas = vdao.listar();
+
+		System.out.println(vendas);
+
+	}
+
+	@Test
+	@Ignore
+	public void buscarPorCodigo() {
+		ProdutosDAO pdao = new ProdutosDAO();
+		Produto p1 = pdao.buscarPorCodigo(3L);
+
+		System.out.println(p1);
+
+	}
+
+	@Test
+	@Ignore
+	public void excluir() {
+		ProdutosDAO pdao = new ProdutosDAO();
+		Produto p1 = pdao.buscarPorCodigo(1L);
+
+		pdao.excluir(p1);
+
+	}
+
+	@Test
+	@Ignore
+	public void editar() {
+		FornecedoresDAO fdao = new FornecedoresDAO();
+		Fornecedor f1 = fdao.buscarPorCodigo(8L);
+
+		ProdutosDAO pdao = new ProdutosDAO();
+		Produto p1 = pdao.buscarPorCodigo(3L);
+		p1.setDescricao("Pacote Leite Integral 300g");
+		p1.setFornecedor(f1);
+		p1.setPreco(new BigDecimal(10.00D));
+		p1.setQuantidade(10);
+
+		pdao.editar(p1);
+	}
+}

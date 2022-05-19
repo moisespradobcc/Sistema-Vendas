@@ -10,21 +10,19 @@ import br.com.vendas.domain.Fornecedor;
 
 public class FornecedorDAOTest {
 
+	
 	@Ignore
 	public void salvar() {
 		Fornecedor f1 = new Fornecedor();
-		f1.setDescricao("Dell Computadoeres");
+		f1.setDescricao("Nestle");
 
 		Fornecedor f2 = new Fornecedor();
-		f2.setDescricao("Furukawa");
-
-		Fornecedor f3 = new Fornecedor();
-		f3.setDescricao("Motorola");
+		f2.setDescricao("Todynho");
 
 		FornecedoresDAO fdao = new FornecedoresDAO();
 		fdao.salvar(f1);
 		fdao.salvar(f2);
-		fdao.salvar(f3);
+
 	}
 
 	@Ignore
@@ -50,27 +48,19 @@ public class FornecedorDAOTest {
 	@Ignore
 	public void excluir() {
 		FornecedoresDAO fdao = new FornecedoresDAO();
-		Fornecedor f1 = fdao.buscarPorCodigo(2L);
+		Fornecedor f1 = fdao.buscarPorCodigo(7L);
 
-		if (f1 != null) {
-			fdao.excluir(f1);
-		}
-	}
+		fdao.excluir(f1);
 
-	@Ignore
-	public void excluirPorCodigo() {
-		FornecedoresDAO fdao = new FornecedoresDAO();
-		fdao.excluir(3L);
 	}
 
 	@Test
 	public void editar() {
-		Fornecedor fornecedor = new Fornecedor();
-		fornecedor.setCodigo(5L);
-		fornecedor.setDescricao("Reebok");
-
 		FornecedoresDAO fdao = new FornecedoresDAO();
-		fdao.editar(fornecedor);
+		Fornecedor f1 = fdao.buscarPorCodigo(8L);
+		f1.setDescricao("Ninho");
+
+		fdao.editar(f1);
 	}
 
 }

@@ -1,0 +1,5 @@
+package br.com.vendas.test;
+
+public class ItemDAOTest {
+
+}

@@ -1,0 +1,29 @@
+package br.com.vendas.test;
+
+import org.junit.Test;
+
+import br.com.vendas.DAO.FuncionariosDAO;
+import br.com.vendas.domain.Funcionario;
+import br.com.vendas.domain.Produto;
+
+public class ProdutoDAOTest {
+	@Test
+	public void salvar() {
+		Produto f1 = new Produto();
+		f1.setNome("Ana Karoline");
+		f1.setCpf("22222222222");
+		f1.setFuncao("RH");
+		f1.setSenha("123456");
+
+		// Funcionario f2 = new Funcionario();
+		// f2.setNome("Débora Gibson");
+		// f2.setCpf("48515726924");
+		// f2.setFuncao("Gerente");
+		// f2.setSenha("123456");
+
+		FuncionariosDAO fdao = new FuncionariosDAO();
+		fdao.salvar(f1);
+		// fdao.salvar(f2);
+
+	}
+}

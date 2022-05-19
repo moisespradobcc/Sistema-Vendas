@@ -1,0 +1,39 @@
+package br.com.vendas.test;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+import br.com.vendas.DAO.FornecedoresDAO;
+import br.com.vendas.DAO.ProdutosDAO;
+import br.com.vendas.domain.Fornecedor;
+import br.com.vendas.domain.Produto;
+
+public class ProdutoDAOTest {
+	@Ignore
+	public void salvar() {
+		FornecedoresDAO fdao = new FornecedoresDAO();
+		Fornecedor f1 = fdao.buscarPorCodigo(6L);
+
+		Produto p1 = new Produto();
+		p1.setDescricao("Notebook Inspirion 3501i");
+		p1.setPreco(new BigDecimal(4700.00D));
+		p1.setQuantidade(10);
+		p1.setFornecedor(f1);
+
+		ProdutosDAO pdao = new ProdutosDAO();
+		pdao.salvar(p1);
+
+	}
+
+	@Test
+	public void listar() {
+		ProdutosDAO pdao = new ProdutosDAO();
+		List<Produto> produtos = pdao.listar();
+
+		System.out.println(produto);
+
+	}
+}
